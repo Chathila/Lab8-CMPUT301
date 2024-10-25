@@ -64,11 +64,11 @@ public class CustomList extends ArrayAdapter<City> {
     }
 
     public void deleteCity(City city) {
-        /*if (cityExists(city)){
+        if (cityExists(city)){
             cities.remove(city);
         } else {
             throw new IllegalArgumentException("City not found in the list.");
-        }*/
+        }
     }
 
 }
