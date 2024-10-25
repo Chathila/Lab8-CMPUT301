@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomList extends ArrayAdapter<City> {
 
@@ -45,6 +46,15 @@ public class CustomList extends ArrayAdapter<City> {
 
     }
 
+    public boolean cityExists(City checkCity) {
+        for (City city : cities) {
+            if (city.getCityName().equals(checkCity.getCityName()) && city.getProvinceName().equals(checkCity.getProvinceName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public int getCount(){
         return cities.size();
     }
@@ -53,8 +63,12 @@ public class CustomList extends ArrayAdapter<City> {
         cities.add(city);
     }
 
-    public void deleteCity(City city){
-
+    public void deleteCity(City city) {
+        /*if (cityExists(city)){
+            cities.remove(city);
+        } else {
+            throw new IllegalArgumentException("City not found in the list.");
+        }*/
     }
 
 }
